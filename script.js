@@ -1,4 +1,4 @@
-// Assignment Code
+// Assigned Variables
 var passwordLength;
 var specialCharacter;
 var upperCase;
@@ -11,9 +11,9 @@ var character= ["!", "(",")", "#", "$", "%", "'", "&", "(", ")", "*", "+", "=", 
 var num= [1,2,3,4,5,6,7,8,9];
 
 var letters= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
+// Function for uppercase coversion
 var gotoUpper = x => x.toUpperCase()
-
+// Convert array to uppercase letters
 var letters2 = letters.map(gotoUpper);
 var generateBtn = document.querySelector("#generate");
 
@@ -121,9 +121,9 @@ function generatePassword(){
   }
 
   var password = [];
-
+    // For loop to generate password based on length choice
   for (var i = 0; i < passwordLength; i++){
-   password.push (passwordChoice[Math.floor(Math.random() * passwordChoice.length)]); console.log(password);
+   password.push (passwordChoice[Math.floor(Math.random() * passwordChoice.length)]); 
   }
 
   return password.join("");
