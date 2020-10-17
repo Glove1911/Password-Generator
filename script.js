@@ -5,24 +5,24 @@ var upperCase;
 var lowerCase;
 var numeric;
 var passwordChoice;
+
 var character= ["!", "(",")", "#", "$", "%", "'", "&", "(", ")", "*", "+", "=", ",", "-", "_", ".", "/", ":", ";", "<", ">", "?", "@", "[", "]", "//",  "^", "`", "~", "|", "{", "}"];
 
 var num= [1,2,3,4,5,6,7,8,9];
 
 var letters= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var gotoUpper = function (x){
-  return x.toUpperCase()
-}
+var gotoUpper = x => x.toUpperCase()
+
 var letters2 = letters.map(gotoUpper);
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var passwordChoice = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = passwordChoice;
+  passwordText.value = password;
 
 }
 
@@ -116,15 +116,17 @@ function generatePassword(){
 
   }
 
-  else if  (numberic){
+  else if  (numeric){
     passwordChoice = num;
   }
 
-  var passwordChoice = [];
+  var password = [];
 
-  for (var i = 0; i < passwordChoice; i++){
-    var passwordChoice = passwordChoice[Math.floor(Math.random() * passwordChoice.length)]; passwordChoice.push(passwordChoice);
+  for (var i = 0; i < passwordLength; i++){
+   password.push (passwordChoice[Math.floor(Math.random() * passwordChoice.length)]); console.log(password);
   }
+
+  return password.join("");
 }
 
 
